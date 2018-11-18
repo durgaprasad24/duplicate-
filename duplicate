@@ -1,0 +1,58 @@
+public class HelloWorld{
+ public static void main(String []args)
+{
+
+ int[] a = new int[] { 1, 1, 3, 3, 5,3,5,2,2 };
+            int[] b = new int[a.Length];
+            int[] c1=  new int[a.Length];
+            int n = a.Length,c=0,l=0;
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                b[i] = a[i];
+            }
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (a[i] == a[j])
+                    {
+                        int s = j;
+                        for (int k = j + 1; k < n; k++, s++)
+                        {
+                            a[s] = a[k];
+                        }
+                        n--;
+                        j--;
+                    }
+                }
+            }
+            for (int i = 0; i < n; i++,l++)
+            {
+                for (int j = 0; j < b.Length; j++)
+                {
+                    if (a[i] == b[j])
+                    {
+                        c++;
+                    }
+                    
+                }
+                if (c > 1)
+                {
+                    c1[l] = c;
+                    c = 0;
+                }
+            }
+            
+            for (int z = 0; z < l; z++)
+            {
+                for (int d = 0; d < c1[z]; d++)
+                {
+                    
+                        System.out.print(a[z]);
+
+                }
+            }
+           
+}
+}
